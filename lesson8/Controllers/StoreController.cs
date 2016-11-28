@@ -9,24 +9,25 @@ namespace lesson8.Controllers
     public class StoreController : Controller
     {
         // GET: Store
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my store index page";
+            ViewBag.Message = "This is my store index page";
+            return View();
         }
 
 
         //Get: Store/Browse?genre=Rock
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
-            return message;
+           ViewBag.Message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+            return View();
         }
 
         //Get: /Store/Details/3
-        public string Details(int id)
+        public ActionResult Details(int id)
         {
-            string message = HttpUtility.HtmlEncode("Store.Details, ID = " + id);
-            return message;
+            ViewBag.Message = HttpUtility.HtmlEncode("Store.Details, ID = " + id);
+            return View();
         }
     }
 }
