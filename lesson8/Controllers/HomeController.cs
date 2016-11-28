@@ -17,6 +17,9 @@ namespace lesson8.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+            ViewBag.Title = "About";
+            ViewBag.Sam = "Sam";
+
             return View();
         }
 
